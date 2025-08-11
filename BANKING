@@ -1,0 +1,62 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+         Scanner sc =new Scanner(System.in);
+        System.out.println("enter Name:");
+        String name=sc.next();
+        System.out.println("enter Age:");
+        int age=sc.nextInt();
+        System.out.println("enter Number:");
+        int num=sc.nextInt();
+        System.out.println("enter Gender:");
+        String gender=sc.next();
+        System.out.println("enter Balance:");
+        double bal=sc.nextDouble();
+        while (true){
+        System.out.println("enter choice:");
+        String choice=sc.next();
+        switch(choice){
+            case"loan":
+                System.out.println("enter 1 for loan or 0 for  no need of loan:");
+                int loan=sc.nextInt();
+                if(loan==1){
+                     System.out.println("enter loan amount:");
+                    double amount=sc.nextDouble();
+                    System.out.println("enter time:");
+                    double t=sc.nextDouble();
+                    double r=9.1;
+                    double si=(amount*t*r)/100;
+                    System.out.println("simple interest for loan amount:"+si);
+                }
+               else
+               {
+                   System.out.println("No need");
+               }
+                break;
+            case"deposit":
+                System.out.println("enter amount to desopite:");
+                double de_amount=sc.nextDouble();
+                bal+=de_amount;
+                System.out.println("amount after deposited:"+bal);
+                break;
+            case"withdraw":
+                 System.out.println("enter amount to withdraw:");
+                double wd=sc.nextDouble();
+                bal-=wd;
+                System.out.println("amount after deposited:"+bal);
+                break;
+            case"details":
+                System.out.println("Name:"+name);
+                System.out.println("Age:"+age);
+                System.out.println("Gender:"+gender);
+                System.out.println("Number:"+num);
+                System.out.println("Account Balance:"+bal);
+                break;
+            default:
+            System.out.println("enter valid choice!");
+        }
+    }
+   }
+}
